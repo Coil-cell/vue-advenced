@@ -1,11 +1,23 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const router = new VueRouter({
-    routes: [
-        
-    ]
-
-})
+  routes: [
+    {
+        // path: url 주소
+      path: '',
+      // component: url 주소로 갔을때, 표시될 컴포넌트 -> ex. page
+      component: '',
+    },
+    {
+      path: '',
+      component: '',
+    },
+    {
+      path: '',
+      component: '',
+    },
+  ],
+});
