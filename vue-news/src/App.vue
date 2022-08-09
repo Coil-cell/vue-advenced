@@ -1,5 +1,8 @@
 <template>
-  <div id="app">hello</div>
+  <div id="app">
+    <!-- router를 등록, main에서 연결, 자동으로 컴포넌트를 반영. -->
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
