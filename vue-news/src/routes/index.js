@@ -6,10 +6,11 @@ import JobsView from '../views/JobsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
 
+
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-  mode: 'history', // 해시태그 제거
+  mode: 'history', // url에 해시태그 제거
   routes: [
     {
       path: '/',
