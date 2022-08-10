@@ -13,7 +13,7 @@ export const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/newssss',
+      redirect: '/news',
     },
     {
       // path: url 주소
