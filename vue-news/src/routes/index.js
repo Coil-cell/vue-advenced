@@ -7,7 +7,6 @@ import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
 import TestView from '../views/test.vue';
 
-
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
@@ -32,11 +31,12 @@ export const router = new VueRouter({
       component: JobsView,
     },
     {
-      path: '/user',
+      // 동적 라우팅
+      path: '/user/:id',
       component: UserView,
     },
     {
-      path: '/item',
+      path: '/item/:id',
       component: ItemView,
     },
     {
