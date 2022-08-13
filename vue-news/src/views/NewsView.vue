@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div v-for="news in this.$store.state.news" :key="news.id">
-      {{ news.title }}
-    </div>
+    <p v-for="item in this.$store.state.news" :key="item.id">
+      <a v-bind:href="item.url">{{ item.title }}</a>
+      <small> {{ item.time_ago }} by {{ item.user }}</small>
+    </p>
   </div>
 </template>
 <script>
@@ -11,7 +12,7 @@
 export default {
   // component 가 생성되자 마자 실행되는 Hook
   created() {
-    this.$store.dispatch("FETCH_NEWS");
+    this.$store.dispatch('FETCH_NEWS');
 
     // *Vuex 적용 이전..
     // data() {
