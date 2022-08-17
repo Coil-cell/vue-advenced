@@ -47,11 +47,11 @@ export default {
         console.log(err);
       });
   },
-  FETCH_ITEMS(context, itemId) {
+  FETCH_ITEMS({ commit }, itemId) {
     fetchItemsInfo(itemId)
       .then((res) => {
         console.log('items - store', res.data);
-        context.commit('SET_ITEMS', res.data);
+        commit('SET_ITEMS', res.data);
       })
       .catch((err) => {
         console.log(err);
