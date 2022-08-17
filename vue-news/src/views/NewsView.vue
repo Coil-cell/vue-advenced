@@ -12,7 +12,7 @@
             <a v-bind:href="item.url">{{ item.title }}</a>
           </p>
           <small class="link-text">
-            by
+            {{ item.time_ago }} by
             <router-link class="link-text" :to="`/user/${item.user}`">
               {{ item.user }}</router-link
             >
@@ -20,20 +20,9 @@
         </div>
       </li>
     </ul>
-    <!-- <p v-for="item in this.$store.state.news" :key="item.id">
-      <a v-bind:href="item.url">{{ item.title }}</a>
-      <small>
-        {{ item.time_ago }}
-        by
-        
-        <router-link :to="`/user/${item.user}`"> {{ item.user }}</router-link>
-      </small>
-    </p> -->
   </div>
 </template>
 <script>
-//import { fetchNewsList } from "../api/index";
-
 export default {
   // component 가 생성되자 마자 실행되는 Hook
   created() {
