@@ -10,9 +10,9 @@
         <div>
           <!-- 타이틀 영역 -->
           <p class="news-title">
-            <templat v-if="item.domain">
+            <template v-if="item.domain">
               <a v-bind:href="item.url">{{ item.title }}</a>
-            </templat>
+            </template>
             <template v-else>
               <router-link :to="`item/${item.id}`">{{
                 item.title
