@@ -10,7 +10,9 @@
       <div class="time">
         <slot name="time"> <!-- 상위 컴포넌트에서 정의할 영역 --> </slot>
       </div>
-      <slot name="karma"> </slot>
+      <div class="karma">
+        <slot name="karma"> <!-- 상위 컴포넌트에서 정의할 영역 --> </slot>
+      </div>
     </div>
   </div>
 </template>
@@ -19,11 +21,6 @@ export default {
   props: {
     info: Object,
   },
-  //   computed: {
-  //     userInfo() {
-  //       return this.$store.state.users;
-  //     },
-  //   },
 };
 </script>
 <style scoped>
@@ -39,6 +36,10 @@ export default {
   font-size: 2.5rem;
 }
 .time {
+  font-size: 0.75rem;
+}
+.karma {
+  color: green;
   font-size: 0.75rem;
 }
 </style>
