@@ -1,6 +1,6 @@
 <template>
   <div>
-    <user-profile></user-profile>
+    <user-profile :info="userInfo"></user-profile>
     <!-- <p>name: {{ userInfo.id }}</p>
     <p>karma: {{ userInfo.karma }}</p>
     <p>created: {{ userInfo.created }}</p> -->
@@ -13,11 +13,11 @@ export default {
   components: {
     UserProfile,
   },
-  // computed: {
-  //   userInfo() {
-  //     return this.$store.state.users;
-  //   },
-  // },
+  computed: {
+    userInfo() {
+      return this.$store.state.users;
+    },
+  },
   created() {
     const userName = this.$route.params.id;
     this.$store.dispatch('FETCH_USER', userName);

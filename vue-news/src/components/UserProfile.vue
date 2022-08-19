@@ -4,24 +4,27 @@
       <i class="fas fa-user"></i>
     </div>
     <div class="user-description">
-      <router-link :to="`/user/${userInfo.user}`">
+      <router-link :to="`/user/${info.user}`">
         <div>
-          {{ userInfo.id }}
+          {{ info.id }}
         </div>
       </router-link>
       <div class="time">
-        {{ userInfo.created }}
+        {{ info.created }}
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  computed: {
-    userInfo() {
-      return this.$store.state.users;
-    },
+  props: {
+    info: Object,
   },
+  //   computed: {
+  //     userInfo() {
+  //       return this.$store.state.users;
+  //     },
+  //   },
 };
 </script>
 <style scoped>
