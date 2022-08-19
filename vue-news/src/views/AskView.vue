@@ -1,6 +1,7 @@
 <template lang="">
   <div>
-    <ul class="ask-list">
+    <list-item></list-item>
+    <!-- <ul class="ask-list">
       <li class="post" v-for="item in fetchedAsk" :key="item.id">
         <div class="points">
           {{ item.points }}
@@ -18,11 +19,12 @@
           >
         </div>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
+import ListItem from '../components/ListItem.vue';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -47,14 +49,18 @@ export default {
     // }
   },
 
-  created() {
-    this.$store.dispatch('FETCH_ASK');
+  // created() {
+  //   this.$store.dispatch('FETCH_ASK');
+  // },
+
+  components: {
+    ListItem,
   },
 };
 </script>
 
 <style scoped>
-.ask-list {
+/* .ask-list {
   margin: 0;
   padding: 0;
 }
@@ -79,5 +85,5 @@ export default {
 
 .link-text {
   color: #828282;
-}
+} */
 </style>
