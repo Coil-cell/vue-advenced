@@ -10,8 +10,9 @@ export default {
   FETCH_NEWS(context) {
     fetchNewsList()
       .then((res) => {
-        console.log(res.data);
+        //console.log(res.data);
         context.commit('SET_NEWS', res.data);
+        return res;
       })
       .catch((err) => {
         console.log(err);
@@ -20,7 +21,7 @@ export default {
   FETCH_ASK(context) {
     fetchAskList()
       .then((res) => {
-        console.log('Ask - store');
+        //console.log('Ask - store');
         context.commit('SET_ASK', res.data);
       })
       .catch((err) => {
@@ -30,7 +31,7 @@ export default {
   FETCH_JOBS({ commit }) {
     fetchJobsList()
       .then(({ data }) => {
-        console.log('Jobs - store');
+        //console.log('Jobs - store');
         commit('SET_JOBS', data);
       })
       .catch((err) => {
@@ -40,7 +41,7 @@ export default {
   FETCH_USER({ commit }, name) {
     fetchUsersInfo(name)
       .then((res) => {
-        console.log('users - store', res.data);
+        //console.log('users - store', res.data);
         commit('SET_USERS', res.data);
       })
       .catch((err) => {
@@ -50,7 +51,7 @@ export default {
   FETCH_ITEMS({ commit }, itemId) {
     fetchItemsInfo(itemId)
       .then((res) => {
-        console.log('items - store', res.data);
+        //console.log('items - store', res.data);
         commit('SET_ITEMS', res.data);
       })
       .catch((err) => {
