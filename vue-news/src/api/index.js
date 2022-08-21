@@ -6,17 +6,17 @@ const config = {
 };
 
 // 2. API 함수들을 정리
-// function fetchNewsList() {
-//   return axios.get(`${config.baseUrl}news/1.json`);
-// }
+function fetchNewsList() {
+  return axios.get(`${config.baseUrl}news/1.json`);
+}
 
-// function fetchAskList() {
-//   return axios.get(`${config.baseUrl}ask/1.json`);
-// }
+function fetchAskList() {
+  return axios.get(`${config.baseUrl}ask/1.json`);
+}
 
-// function fetchJobsList() {
-//   return axios.get(`${config.baseUrl}jobs/1.json`);
-// }
+function fetchJobsList() {
+  return axios.get(`${config.baseUrl}jobs/1.json`);
+}
 
 function fetchList(pageName) {
   return axios.get(`${config.baseUrl}${pageName}/1.json`);
@@ -32,9 +32,9 @@ function fetchItemsInfo(itemid) {
 
 // 3. 외부에서 읽을수 있도록
 export {
-  // fetchNewsList,
-  // fetchAskList,
-  // fetchJobsList,
+  fetchNewsList,
+  fetchAskList,
+  fetchJobsList,
   fetchUsersInfo,
   fetchItemsInfo,
   fetchList,
