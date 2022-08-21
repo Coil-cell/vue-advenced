@@ -7,7 +7,7 @@ export default {
     bus.$emit('start:spinner');
     setTimeout(() => {
       this.$store
-        .dispatch('FETCH_LIST')
+        .dispatch('FETCH_LIST', this.$route.name)
         .then(() => {
           console.log('fetched..mixins');
           bus.$emit('end:spinner');
