@@ -28,6 +28,7 @@ import ListItem from '../components/ListItem.vue';
 import { mapGetters } from 'vuex';
 // import bus from '../utils/bus.js';
 import ListMixin from '../mixins/ListMixin';
+//import bus from '../utils/bus.js';
 
 export default {
   computed: {
@@ -70,6 +71,9 @@ export default {
   components: {
     ListItem,
   },
+  // mounted() {
+  //   bus.$emit('end:spinner');
+  // },
 };
 </script>
 
