@@ -59,6 +59,7 @@ export const router = new VueRouter({
         bus.$emit('start:spinner');
         setTimeout(() => {
           store
+            //.dispatch('FETCH_ASK', to.name)
             .dispatch('FETCH_LIST', to.name)
             .then(() => {
               console.log('fetched..route nav guard');
@@ -81,6 +82,7 @@ export const router = new VueRouter({
         bus.$emit('start:spinner');
         setTimeout(() => {
           store
+            //.dispatch('FETCH_JOBS', to.name)
             .dispatch('FETCH_LIST', to.name)
             .then(() => {
               console.log('fetched..route nav guard');

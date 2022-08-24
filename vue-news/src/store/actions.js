@@ -8,37 +8,44 @@ import {
 } from '../api/index.js';
 
 export default {
-  FETCH_NEWS(context) {
-    fetchNewsList()
-      .then((res) => {
-        console.log(res.data);
-        context.commit('SET_NEWS', res.data);
-        return res;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  // promise
+  // FETCH_NEWS(context) {
+  //   fetchNewsList()
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       context.commit('SET_NEWS', res.data);
+  //       return res;
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // },
+
+  // async
+  async FETCH_NEWS(context) {
+    const res = await fetchNewsList();
+    context.commit('SET_NEWS', res.data);
+    console.log('fetch news');
+    return res;
   },
-  FETCH_ASK(context) {
-    fetchAskList()
-      .then((res) => {
-        //console.log('Ask - store');
-        context.commit('SET_ASK', res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+  async FETCH_ASK({ commit }) {
+    try {
+      const res = await fetchAskList();
+      commit('SET_ASK', res.data);
+      console.log('fetch ask');
+      return res;
+    } catch (err) {
+      console.log(err);
+    }
   },
-  FETCH_JOBS({ commit }) {
-    fetchJobsList()
-      .then(({ data }) => {
-        //console.log('Jobs - store');
-        commit('SET_JOBS', data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+  async FETCH_JOBS(context) {
+    const res = fetchJobsList();
+    context.commit('SET_JOBS', res.data);
+    console.log('fetch jobs');
   },
+
   FETCH_USER({ commit }, name) {
     fetchUsersInfo(name)
       .then((res) => {
@@ -59,14 +66,9 @@ export default {
         console.log(err);
       });
   },
-  FETCH_LIST({ commit }, pageName) {
-    return fetchList(pageName)
-      .then(({ data }) => {
-        console.log('4');
-        commit('SET_LIST', data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  async FETCH_LIST({ commit }, pageName) {
+    const res = await fetchList(pageName);
+    commit('SET_LIST', res.data);
+    return res;
   },
 };
