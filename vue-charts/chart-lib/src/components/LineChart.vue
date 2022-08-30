@@ -2,7 +2,7 @@
   <canvas ref="myLineChart" id="myLineChart" width="400" height="400"></canvas>
 </template>
 <script>
-import Chart from 'chart.js';
+// import Chart from 'chart.js';
 
 export default {
   /* eslint-disable no-unused-vars */
@@ -10,7 +10,7 @@ export default {
   mounted() {
     //const ctx = this.$refs.myLineChart.getContext('2d');
     //const myChart = new Chart(ctx, {
-    const myChart = new Chart(this.$refs.myLineChart.getContext('2d'), {
+    const myChart = new this.$_Chart(this.$refs.myLineChart.getContext('2d'), {
       type: 'line',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],

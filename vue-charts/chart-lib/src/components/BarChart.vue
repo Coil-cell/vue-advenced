@@ -2,7 +2,7 @@
   <canvas ref="barChart" id="barChart" width="400" height="400"></canvas>
 </template>
 <script>
-import Chart from 'chart.js';
+// import Chart from 'chart.js';
 
 export default {
   /* eslint-disable no-unused-vars */
@@ -10,7 +10,7 @@ export default {
   mounted() {
     //const ctx = document.getElementById('barChart');
 
-    const myChart = new Chart(this.$refs.barChart, {
+    var myChart = new this.$_Chart(this.$refs.barChart, {
       type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
