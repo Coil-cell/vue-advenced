@@ -1,5 +1,5 @@
 <template lang="">
-  <canvas id="barChart" width="400" height="400"></canvas>
+  <canvas ref="barChart" id="barChart" width="400" height="400"></canvas>
 </template>
 <script>
 import Chart from 'chart.js';
@@ -8,8 +8,9 @@ export default {
   /* eslint-disable no-unused-vars */
 
   mounted() {
-    const ctx = document.getElementById('barChart');
-    const myChart = new Chart(ctx, {
+    //const ctx = document.getElementById('barChart');
+
+    const myChart = new Chart(this.$refs.barChart, {
       type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
